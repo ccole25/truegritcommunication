@@ -10,11 +10,10 @@ export default class MasterLayout extends Component {
 
   render () {
     return (
-      <div>
+      <div style={{height: "100%"}}>
         <Helmet {...config.head}/>
         {this.props.children}
       </div>
     );
   }
 }
-

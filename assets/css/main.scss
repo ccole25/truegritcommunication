@@ -1,0 +1,18 @@
+$icon-font-path: "~bootstrap-sass/assets/fonts/bootstrap/";
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/_mixins.scss";
+@import "~bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+// @import "~bootstrap-sass/assets/stylesheets/bootstrap.theme.scss";
+
+html,
+body {
+  height: 100%;
+}
+
+.cirlcle {
+  position: relative;
+  width: 70px;
+  background-color: transparent;
+  margin: 0 auto 25px auto;
+  border-left: solid 2px #333333;
+  border-right: solid 2px #333333;
+}

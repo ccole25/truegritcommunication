@@ -1,11 +1,59 @@
 /* @flow */
 import React, { Component } from "react";
+// import Measure from "react-measure";
+import "assets/css/main.scss";
+
+import Header from "components/Header";
+import MainContent from "components/MainContent";
+import Footer from "components/Footer";
 
 export default class Home extends Component {
+  state = {
+    header: {
+      height: -1
+    },
+    footer: {
+      height: -1
+    }
+  }
+
   render () {
+    // const { header, footer } = this.state;
+
     return (
-      <div>Home</div>
+      <div className="home" style={styles.wrapper}>
+        <Header />
+        <MainContent />
+        <Footer />
+      </div>
     );
   }
 }
 
+const styles = {
+  wrapper: {
+    height: "100vh",
+  }
+};
+
+// return (
+//   <div className="home" style={styles.wrapper}>
+//     <Measure
+//       onMeasure={(header) => {
+//         this.setState({header});
+//       }}
+//     >
+//       <Header />
+//     </Measure>
+//
+//     <MainContent headerHeight={header.height} footerHeight={footer.height}/>
+//
+//     <Measure
+//       onMeasure={(footer) => {
+//         this.setState({footer});
+//       }}
+//     >
+//       <Footer />
+//     </Measure>
+//   </div>
+// );

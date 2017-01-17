@@ -25,7 +25,7 @@ export class HomeApp extends Component {
 
   render () {
     return (
-      <div>
+      <div className="homeApp">
         <Helmet title="Home"/>
         <Home />
       </div>
@@ -37,4 +37,3 @@ export default connect(
   (/* state */) => ({/** _INSERT_STATE_  **/}),
   (dispatch) => bindActionCreators({/** _INSERT_ACTION_CREATORS_ **/}, dispatch)
 )(HomeApp);
-
