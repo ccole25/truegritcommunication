@@ -4,7 +4,7 @@ import React, { Component } from "react";
 import "assets/css/main.scss";
 
 import Header from "components/Header";
-import MainContent from "components/MainContent";
+import HeroContent from "components/HeroContent";
 import Footer from "components/Footer";
 
 export default class Home extends Component {
@@ -23,7 +23,7 @@ export default class Home extends Component {
     return (
       <div className="home" style={styles.wrapper}>
         <Header />
-        <MainContent />
+        <HeroContent />
         <Footer />
       </div>
     );
@@ -46,7 +46,7 @@ const styles = {
 //       <Header />
 //     </Measure>
 //
-//     <MainContent headerHeight={header.height} footerHeight={footer.height}/>
+//     <HeroContent headerHeight={header.height} footerHeight={footer.height}/>
 //
 //     <Measure
 //       onMeasure={(footer) => {

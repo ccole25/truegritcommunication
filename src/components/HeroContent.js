@@ -1,12 +1,12 @@
 /* @flow */
 import React, { Component, PropTypes } from "react";
-import { Row, Col, Modal } from "components/react-bootstrap-subset";
+import { Row, Col, Modal, Glyphicon } from "components/react-bootstrap-subset";
 import Radium from "radium";
 
-import sunset from "assets/img/turbineSunset.jpg";
+import heroImg from "assets/img/turbine5.jpg";
 // import breakpoints from "lib/breakpoints.js";
 
-export class MainContent extends Component {
+export class HeroContent extends Component {
   static propTypes = {
     headerHeight: PropTypes.number,
     footerHeight: PropTypes.number
@@ -44,7 +44,7 @@ export class MainContent extends Component {
     );
   }
 
-  renderInfo() {
+  renderLinks() {
     const sections = [
       {href: "1", title: "Products"},
       {href: "2", title: "Licenses"},
@@ -70,40 +70,56 @@ export class MainContent extends Component {
     };
 
     return (
-      <div className="mainContent" style={ [dynamicStyles, styles.wrapper] }>
+      <div className="heroContent" style={ [dynamicStyles, styles.wrapper] }>
       { this.renderModal() }
-        <Row style={{height: "100%", margin: 0}}>
-          <Col xs={12} sm={5} style={styles.imgCol}></Col>
-          <Col xs={12} sm={7} style={styles.fullHeight}>
-            <Row style={styles.fullHeight}>
-              { this.renderInfo() }
-            </Row>
-          </Col>
+        <Row>
+          <Col xs={12} style={styles.imgCol}></Col>
         </Row>
       </div>
     );
   }
 }
 
-export default Radium(MainContent);
+export default Radium(HeroContent);
 
 const styles = {
   imgCol: {
-    height: "100%",
-    backgroundImage: `url(${sunset})`,
+    height: 500,
+    backgroundImage: `url(${heroImg})`,
     backgroundSize: "cover",
-    backgroundPosition: "25%"
+    backgroundPosition: "center 80%"
+  },
+  text: {
+    textAlign: "center",
+    fontSize: "325%",
+    color: "#fff",
+    margin: "150px 0 25px",
+    textShadow: "0 0 10px #3d3d3d"
+  },
+  hr: {
+    width: "75%",
+  },
+  arrows: {
+    textAlign: "center",
+    marginTop: "14%",
+    color: "#fff"
+  },
+  iconTop: {
+    display: "inherit",
+    fontSize: 25
+  },
+  iconBottom: {
+    fontSize: 30
   },
   sharedCol: {
     display: "table",
-    height: "100%",
+    height: "75px",
     textAlign: "center",
     padding: 0,
     borderLeft: "1px solid #ccc"
   },
   wrapper: {
     position: "relative",
-    height: 400,
     right: 0,
     left: 0
   },
@@ -116,11 +132,11 @@ const styles = {
     margin: 0,
     verticalAlign: "middle",
     background: "#fff",
-    color: "orange",
+    color: "black",
     fontSize: 24,
     ":hover": {
       opacity: 5,
-      color: "black"
+      color: "orange"
     }
   }
 };

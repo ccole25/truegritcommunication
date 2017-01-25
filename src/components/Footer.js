@@ -29,30 +29,16 @@ export default class Footer extends Component {
 
   render () {
     return (
-      <div style={styles.wrapper}>
-        <h2 style={styles.text}>"A Company with Honesty, Integrity, & Tenacity"</h2>
-        <Row style={styles.row}>
-          { this.renderSections() }
-        </Row>
-      </div>
+      <Row style={styles.rowBorder}>
+        { this.renderSections() }
+      </Row>
     );
   }
 }
 
 const styles = {
-  wrapper: {
-    position: "relative",
-    width: "100%",
-    bottom: 0,
+  rowBorder: {
     borderTop: "1px solid #ccc"
-  },
-  text: {
-    width: "100%",
-    textAlign: "center",
-    padding: "15px 0"
-  },
-  row: {
-    margin: 0
   },
   section: {
     padding: "15px 20px 15px",

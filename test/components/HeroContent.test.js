@@ -1,12 +1,12 @@
 /*global React*/
 /*global describe it*/
 /*global expect*/
-import MainContent from "components/MainContent";
+import HeroContent from "components/HeroContent";
 import { shallow } from "enzyme";
 
-describe("components/MainContent", () => {
+describe("components/HeroContent", () => {
   it("renders without an issue", () => {
-    const subject = <MainContent />;
+    const subject = <HeroContent />;
     const wrapper = shallow(subject);
     expect(wrapper).to.exist;
   });

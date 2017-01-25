@@ -8,6 +8,21 @@ body {
   height: 100%;
 }
 
+.nav {
+  li a {
+    border-bottom: 1px solid #be4d35;
+    color: #fff;
+    &:hover {
+      background-color: transparent;
+      border-bottom: 1px solid #fff;
+      color: #ccc;
+    }
+    &:focus {
+      background-color: transparent;
+    }
+  }
+}
+
 .cirlcle {
   position: relative;
   width: 70px;

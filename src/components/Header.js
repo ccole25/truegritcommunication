@@ -1,6 +1,6 @@
 /* @flow */
 import React, { Component } from "react";
-import { Grid, Row, Col, Nav, NavItem, Collapse, Well } from "react-bootstrap";
+import { Grid, Row, Col, Nav, NavItem} from "react-bootstrap";
 
 export default class Header extends Component {
   constructor(...args) {
@@ -9,35 +9,33 @@ export default class Header extends Component {
   }
   render () {
     return (
-      <div className="header" style={styles.wrapper}>
-        <Grid>
-          <Row>
-            <Col xs={6}>
-              <h5>True Grit Comminication, LLC</h5>
-            </Col>
-            <Col xs={6}>
-              <div onClick={ ()=> this.setState({ open: !this.state.open })} style={styles.contact}>Contact</div>
-              <Collapse in={this.state.open}>
-                <div>
-                  <Well>
-                    Words
-                  </Well>
-                </div>
-              </Collapse>
-            </Col>
-          </Row>
-        </Grid>
-      </div>
+      <Row className="header" style={styles.wrapper}>
+        <Col xs={6}>
+          <div style={styles.logoWrapper}>
+            <h4>TCG</h4>
+          </div>
+        </Col>
+        <Col xs={6}>
+          <Nav className="nav" activeKey={1} justified>
+            <NavItem eventKey={1}>Products</NavItem>
+            <NavItem eventKey={2}>Licenses</NavItem>
+            <NavItem eventKey={3}>Safety</NavItem>
+            <NavItem eventKey={4}>Contact</NavItem>
+          </Nav>
+        </Col>
+      </Row>
     );
   }
 }
 
 const styles = {
   wrapper: {
-    borderBottom: "1px solid #ccc"
+    backgroundColor: "#be4d35"
   },
-  contact: {
-    marginTop: 10,
-    textAlign: "right"
+  logoWrapper: {
+    backgroundColor: "#474a4c"
+  },
+  nav: {
+    color: "#fff"
   }
 };
