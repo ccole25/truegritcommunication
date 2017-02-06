@@ -1,12 +1,12 @@
 /*global React*/
 /*global describe it*/
 /*global expect*/
-import Footer from "components/Footer";
+import InfoSection from "components/InfoSection";
 import { shallow } from "enzyme";
 
-describe("components/Footer", () => {
+describe("components/InfoSection", () => {
   it("renders without an issue", () => {
-    const subject = <Footer />;
+    const subject = <InfoSection />;
     const wrapper = shallow(subject);
     expect(wrapper).to.exist;
   });
