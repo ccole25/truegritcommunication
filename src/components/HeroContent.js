@@ -1,11 +1,8 @@
 /* @flow */
 import React, { Component, PropTypes } from "react";
-import { Row, Col, Glyphicon } from "components/react-bootstrap-subset";
+import { Glyphicon } from "components/react-bootstrap-subset";
 import Radium from "radium";
 import Parallax from "react-simple-parallax";
-
-import heroImg from "assets/img/turbine5.jpg";
-// import breakpoints from "lib/breakpoints.js";
 
 export class HeroContent extends Component {
   static propTypes = {
