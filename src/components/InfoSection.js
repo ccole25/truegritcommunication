@@ -3,7 +3,7 @@ import React, { Component, PropTypes } from "react";
 import Radium from "radium";
 import { Row, Col, Glyphicon } from "components/react-bootstrap-subset";
 
-// import breakpoints from "../lib/breakpoints";
+import breakpoints from "../lib/breakpoints";
 
 export class InfoSection extends Component {
   static propTypes = {
@@ -18,22 +18,25 @@ export class InfoSection extends Component {
       const isOdd = i % 2;
       const dynamicCircleStyles = isOdd ? styles.oddCircle : styles.evenCircle;
       const dynamicSectionStyles = isOdd ? styles.oddSection : styles.evenSection;
+      const dynamicFloatStyles = isOdd ? styles.oddFloat : null;
+      const dynamicTextStyles = isOdd ? styles.oddText : styles.evenText;
 
       return (
         <div key={i} style={[styles.sectionWrapper, dynamicSectionStyles]}>
           <Row className="justify-center">
-            <Col xs={12} sm={5}>
+            <Col xs={12} sm={6} style={dynamicFloatStyles}>
               <div style={[styles.circle, dynamicCircleStyles]}>
                 <Glyphicon glyph={iconName} style={styles.icon}/>
               </div>
             </Col>
             <Col xs={12} sm={6}>
+              <div style={dynamicTextStyles}>
                 <h2>{title}</h2>
                 <p>
                   {description}
                 </p>
+              </div>
             </Col>
-            <Col></Col>
           </Row>
         </div>
       );
@@ -51,6 +54,7 @@ export default Radium(InfoSection);
 
 const styles = {
   sectionWrapper: {
+    position: "relative",
     padding: "100px 20px",
     textAlign: "left"
   },
@@ -78,5 +82,20 @@ const styles = {
   oddSection: {
     backgroundColor: "#be4d35",
     color: "#fff"
+  },
+  oddFloat: {
+    float: "right"
+  },
+  oddText: {
+    paddingLeft: "20%",
+    [ breakpoints.sm.max ]: {
+      paddingLeft: 0
+    }
+  },
+  evenText: {
+    paddingRight: "20%",
+    [ breakpoints.sm.max ]: {
+      paddingLeft: 0
+    }
   }
 };

@@ -8,9 +8,13 @@ body {
   height: 100%;
 }
 
+p {
+  margin: 1em 0;
+}
+
 .nav {
   padding-right: 15px;
-  font-size: 16px;
+  font-size: 18px;
   li a {
     border-bottom: 1px solid #be4d35;
     color: #fff;
@@ -23,6 +27,17 @@ body {
     }
   }
 }
+
+.react-simple-parallax-bg {
+      background-image: url('../img/turbine5.jpg');
+      height: 750px;
+  }
+
+.parallax {
+    top: 250px;
+    margin: auto;
+}
+
 
 .cirlcle {
   position: relative;
@@ -41,5 +56,12 @@ body {
     .close {
       font-size: 35px;
     }
+  }
+}
+
+.contactTable {
+  tbody > tr > td {
+    padding: 15px;
+    font-size: 18px;
   }
 }

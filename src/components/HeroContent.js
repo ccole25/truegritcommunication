@@ -2,6 +2,7 @@
 import React, { Component, PropTypes } from "react";
 import { Row, Col, Glyphicon } from "components/react-bootstrap-subset";
 import Radium from "radium";
+import Parallax from "react-simple-parallax";
 
 import heroImg from "assets/img/turbine5.jpg";
 // import breakpoints from "lib/breakpoints.js";
@@ -22,14 +23,12 @@ export class HeroContent extends Component {
 
     return (
       <div className="heroContent" style={ [dynamicStyles, styles.wrapper] }>
-        <Row>
-          <Col xs={12} style={styles.imgCol}>
-            <h1 style={styles.h1}>True Grit Communication</h1>
-            <hr style={styles.hr}/>
-            <h3 style={styles.h3}><i>Fiber-Optic Solutions</i></h3>
-            <div style={styles.iconWrapper}><Glyphicon glyph="chevron-down" style={styles.icon}/> </div>
-          </Col>
-        </Row>
+        <Parallax className="parallax">
+          <h1 style={styles.h1}>True Grit Communication, LLC</h1>
+          <hr style={styles.hr}/>
+          <h3 style={styles.h3}><i>Fiber-Optic Solutions</i></h3>
+        </Parallax>
+        <div style={styles.iconWrapper}><Glyphicon glyph="chevron-down" style={styles.icon}/> </div>
       </div>
     );
   }
@@ -38,15 +37,6 @@ export class HeroContent extends Component {
 export default Radium(HeroContent);
 
 const styles = {
-  imgCol: {
-    height: 500,
-    backgroundImage: `url(${heroImg})`,
-    backgroundSize: "cover",
-    backgroundPosition: "center 80%",
-    color: "#fff",
-    textAlign: "center",
-    paddingTop: "120px"
-  },
   h1: {
     fontSize: 50
   },
@@ -86,24 +76,10 @@ const styles = {
   wrapper: {
     position: "relative",
     right: 0,
-    left: 0
+    left: 0,
+    textAlign: "center",
+    color: "#fff"
   },
-  fullHeight: {
-    height: "100%"
-  },
-  // anchor: {
-  //   height: "100%",
-  //   display: "table-cell",
-  //   margin: 0,
-  //   verticalAlign: "middle",
-  //   background: "#fff",
-  //   color: "black",
-  //   fontSize: 24,
-  //   ":hover": {
-  //     opacity: 5,
-  //     color: "orange"
-  //   }
-  // },
   iconWrapper: {
     position: "absolute",
     bottom: 0,
