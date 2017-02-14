@@ -1,2 +1,2 @@
 # truegritcommunication
-Website for True Grit Communication, INC
+Website for True Grit Communication, LLC

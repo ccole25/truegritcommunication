@@ -2,10 +2,10 @@
 // exposed in the client code.
 
 const headContent = {
-  title: "My Gluestick App",
-  titleTemplate: "%s | Gluestick Application",
+  title: "True Grit Communication, LLC",
+  titleTemplate: "True Grit Communication, LLC",
   meta: [
-    {name: "description", content: "Gluestick application"}
+    {name: "description", content: "Fiber-Optic Solutions. Specializing In: Safe Work Practices, Fiber-Optic Splicing, Connections & Terminations, Outside Plant & Inside Plant, CAT-5/6 Installations & Terminations, Rack & Electronic Equipment Installations, Training & Education, FTTH Splicing & Terminations, Specialized Fiber-Optic Testing, Excellent Service & Problem Solving, Turbines, MET Towers, Sub-Stations & O&M Facilities & Office."}
   ]
 };
 
@@ -30,4 +30,3 @@ const config = {
 };
 
 export default (config[process.env.NODE_ENV] || config["development"]);
-
