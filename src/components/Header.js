@@ -9,7 +9,6 @@ export default class Header extends Component {
       showModal: false,
       modalContent: {}
     };
-    // this.showModal = this.showModal.bind(this);
     this.hideModal = this.hideModal.bind(this);
     this.renderTitle = this.renderTitle.bind(this);
   }
@@ -26,6 +25,27 @@ export default class Header extends Component {
       showModal: false,
       whichModal: ""
     });
+  }
+
+  render () {
+    return (
+      <div className="header" style={styles.wrapper}>
+        <Row>
+          { this.renderModal() }
+          <Col xs={5}>
+            <div style={styles.logoWrapper}>TGC</div>
+          </Col>
+          <Col xs={7}>
+            <Nav className="nav" justified>
+              <NavItem ref="products" onClick={() => this.showModal("products")}>Products</NavItem>
+              <NavItem ref="licenses" onClick={() => this.showModal("licenses")}>Licenses</NavItem>
+              <NavItem ref="Safety" onClick={() => this.showModal("safety")}>Safety</NavItem>
+              <NavItem ref="Contact" onClick={() => this.showModal("contact")}>Contact</NavItem>
+            </Nav>
+          </Col>
+        </Row>
+      </div>
+    );
   }
 
   renderTitle() {
@@ -61,7 +81,7 @@ export default class Header extends Component {
       <Table className="contactTable" striped hover>
         <tbody>
           <tr>
-            <td>Rodger High</td>
+            <td>Roger High</td>
             <td>President</td>
             <td><a href="tel:9137244446">(913)724-4446</a></td>
           </tr>
@@ -92,26 +112,25 @@ export default class Header extends Component {
       "OPGW Splice Enclosures",
       "Sub-Station Operation & Maintenance Materials",
       "Meterological Tower Splicing Materials",
-      "CAT 5/6 Supplies, Patch Panels, Racks to Fit All Applicat"
+      "CAT 5/6 Supplies, Patch Panels, Racks to Fit All Applications"
     ];
 
     const pmList = [
       "Weekly Production Reports",
       "Prompt Invoicing",
       "Final Product Thumb Drives with Prints, Pictures, & Completion Reports",
-      "Excellent Communicat"
+      "Excellent Communication"
     ];
 
     const equipmentList = [
       "A minimum of 2 TGC personnel on-site at all times",
-      "All Required Safety & Peripherial Equipment",
-      "All TGC Bids agrees to Mob/DeMob as many times as necessary to complete the projects"
+      "All Required Safety & Peripherial Equipment"
     ];
 
     return (
       <div>
         <h2><b>Materials</b></h2>
-        <h4>True Grit Communication, LLC stocks all types of slicing materials to include:</h4>
+        <h4>True Grit Communication, LLC stocks all types of splicing materials to include:</h4>
         <ul>
           {
             materials.map((material, i) => {
@@ -121,7 +140,8 @@ export default class Header extends Component {
         </ul>
 
         <h2><b>Drafting</b></h2>
-        <p>TGC has a drafter on staff with over 15-years experience for design & production of all necessary splicing prints.</p>
+        <p>TGC has a drafter on staff with over 15-years experience in design & production of all necessary splicing prints.</p>
+
         <h2><b>Project Management</b></h2>
         <h4>Includes:</h4>
         <ul>
@@ -132,11 +152,8 @@ export default class Header extends Component {
           }
         </ul>
 
-        <h2><b>Drafting</b></h2>
-        <p>TGC has a drafter on staff with over 15-years experience for design & production of all necessary splicing prints.</p>
-
-        <h2><b>On-site crew & equipment</b></h2>
-        <h4>TGC guarantees to provid:</h4>
+        <h2><strong>On-site crew & equipment</strong></h2>
+        <h4>TGC guarantees to provide:</h4>
         <ul>
           {
             equipmentList.map((equipment, i) => {
@@ -156,37 +173,38 @@ export default class Header extends Component {
       "Workman's Compensation Applicable in Each of the 48 States"
     ];
 
-    const approvals = [
-      "AT&T",
-      "Blattner Energy",
-      "EDF Renewable Energy",
-      "ENEL North America",
-      "EPC Services Company",
-      "Geronimo Wind Energy",
-      "Google",
-      "Henkles & McCoy, Inc.",
-      "J. F. Edwards Construction Company",
-      "Mortenson Construction",
-      "North Arkansas Telephone Company",
-      "RES North American, LLC",
-      "SCADA International, Inc.",
-      "Southwest Arkansas Telephone Company",
-      "Spring",
-      "SunEdison",
-      "Sunergy World",
-      "T-Mobile Telephone Company",
-      "Verizon Telephone Company",
-      "Vestas USA",
-      "Wanzek Construction, Inc.",
-      "WSP Group",
-      "Xcel En"
-    ];
+    //Asked to be removed for the time being.
+    // const approvals = [
+    //   "AT&T",
+    //   "Blattner Energy",
+    //   "EDF Renewable Energy",
+    //   "ENEL North America",
+    //   "EPC Services Company",
+    //   "Geronimo Wind Energy",
+    //   "Google",
+    //   "Henkles & McCoy, Inc.",
+    //   "J. F. Edwards Construction Company",
+    //   "Mortenson Construction",
+    //   "North Arkansas Telephone Company",
+    //   "RES North American, LLC",
+    //   "SCADA International, Inc.",
+    //   "Southwest Arkansas Telephone Company",
+    //   "Spring",
+    //   "SunEdison",
+    //   "Sunergy World",
+    //   "T-Mobile Telephone Company",
+    //   "Verizon Telephone Company",
+    //   "Vestas USA",
+    //   "Wanzek Construction, Inc.",
+    //   "WSP Group",
+    //   "Xcel En"
+    // ];
 
     return (
       <div>
-        <p>TGC currently is licensed in the State of Kansas.  Operational licenses in all other
+        <p>TGC is currently licensed in the States of Kansas and Missouri.  Operational licenses in all other
         States are readily available within one day and will be obtained as needed by a
-        client''s job requirements.</p>
+        client's job requirements.</p>
 
         <h2><b>Insurance & Bonding</b></h2>
         <h4>TGC is insured & bonded in all 48 continental United States to include:</h4>
@@ -194,15 +212,6 @@ export default class Header extends Component {
           {
             insurances.map((insurance, i) => {
               return <li key={i}>{insurance}</li>;
-            })
-          }
-        </ul>
-
-        <h3><b>APPROVED CONTRACTOR FOR:</b></h3>
-        <ul>
-          {
-            approvals.map((approved, i) => {
-              return <li key={i}>{approved}</li>;
             })
           }
         </ul>
@@ -230,7 +239,7 @@ export default class Header extends Component {
       "Heavy Lifting Training",
       "Ladder Safety Training",
       "Fall Protection Training",
-      "Cold/Hot Weather Trai"
+      "Cold/Hot Weather Training"
     ];
 
     return (
@@ -241,7 +250,7 @@ export default class Header extends Component {
           })
         }
         <p>These Training Procedures are Updated Monthly, Semi-Annually & Yearly</p>
-        <p>All TGC Employees are required to attend a daily safety training meeting on-site.</p>
+        <p>All TGC Employees are required to attend a daily safety meeting on-site.</p>
       </div>
     );
   }
@@ -259,27 +268,6 @@ export default class Header extends Component {
           <Button onClick={this.hideModal}>Close</Button>
         </Modal.Footer>
       </Modal>
-    );
-  }
-
-  render () {
-    return (
-      <div className="header" style={styles.wrapper}>
-        <Row>
-          { this.renderModal() }
-          <Col xs={5}>
-            <div style={styles.logoWrapper}>TGC</div>
-          </Col>
-          <Col xs={7}>
-            <Nav className="nav" justified>
-              <NavItem ref="products" onClick={() => this.showModal("products")}>Products</NavItem>
-              <NavItem ref="licenses" onClick={() => this.showModal("licenses")}>Licenses</NavItem>
-              <NavItem ref="Safety" onClick={() => this.showModal("safety")}>Safety</NavItem>
-              <NavItem ref="Contact" onClick={() => this.showModal("contact")}>Contact</NavItem>
-            </Nav>
-          </Col>
-        </Row>
-      </div>
     );
   }
 }

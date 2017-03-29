@@ -50,11 +50,12 @@ p {
 
 .modal-dialog {
   .modal-content {
-    border-right: 8px solid #a2a2a2;
-    border-left: 8px solid #a2a2a2;
     border-radius: 0;
     .close {
       font-size: 35px;
+    }
+    .modal-body {
+      padding: 15px 30px;
     }
   }
 }
